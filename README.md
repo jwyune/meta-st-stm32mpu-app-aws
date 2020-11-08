@@ -13,7 +13,7 @@ Notes :
 - meta-virtualization: "ff997b6b3ba800978546098ab3cdaa113b6695e1"
 - meta-security: "c74cc97641fd93e0e7a4383255e9a0ab3deaf9d7"
 3. The Greengrass application is delivered by Amazon as binaries for a RASPBIAN distribution.
-4. The AWS IoT Greengrass version installed is v1.10.1, AWS IoT Device Tester version used for AWS certification is IDT v3.2.0
+4. The AWS IoT Greengrass version installed is v1.11.0, AWS IoT Device Tester version used for AWS certification is IDT v3.2.0
 5. The target is configured to Support the Greengrass Over-the-Air Updates (OTA)
 
 ## Process for installation :
@@ -35,14 +35,14 @@ ref : [STM32MP1 Distribution Package - OpenSTLinux distribution](https://wiki.st
 #### Setup the build environment
 Executes the command, on the host :
  > **PC $>** cd [your STM32MP1 Distribution path]<br>
- > **PC $>** DISTRO=openstlinux-weston MACHINE=stm32mp1-demo-aws source layers/meta-st/scripts/envsetup.sh
+ > **PC $>** DISTRO=openstlinux-weston MACHINE=stm32mp1-aws-ec21 source layers/meta-st/scripts/envsetup.sh
 
 #### Add Virtualization (docker) in OpenSTLinux distribution
  > **PC $>** cd [your STM32MP1 Distribution path]/layers<br>
  > **PC $>** git clone git://git.yoctoproject.org/meta-virtualization<br>
  > **PC $>** cd meta-virtualization<br>
  > **PC $>** git checkout remotes/origin/dunfell<br>
- > **PC $>** cd [your STM32MP1 Distribution path]/build-openstlinuxweston-stm32mp1-demo-aws<br>
+ > **PC $>** cd [your STM32MP1 Distribution path]/build-openstlinuxweston-stm32mp1-aws-ec21<br>
  > **PC $>** bitbake-layers add-layer [your STM32MP1 Distribution path]/layers/meta-virtualization
 
 
@@ -57,10 +57,10 @@ Apply the following update in the file _[your STM32MP1 Distribution path]/layers
  > **PC $>** git clone git://git.yoctoproject.org/meta-java<br>
  > **PC $>** cd meta-java<br>
  > **PC $>** git checkout remotes/origin/dunfell<br>
- > **PC $>** cd [your STM32MP1 Distribution path]/build-openstlinuxweston-stm32mp1-demo-aws<br>
+ > **PC $>** cd [your STM32MP1 Distribution path]/build-openstlinuxweston-stm32mp1-aws-ec21<br>
  > **PC $>** bitbake-layers add-layer [your STM32MP1 Distribution path]/layers/meta-java
 
-Apply the following update in the file _[your STM32MP1 Distribution path]/build-openstlinuxweston-stm32mp1-demo-aws/conf/local.conf_
+Apply the following update in the file _[your STM32MP1 Distribution path]/build-openstlinuxweston-stm32mp1-aws-ec21/conf/local.conf_
 
 ```
  # Possible provider: cacao-initial-native and jamvm-initial-native
