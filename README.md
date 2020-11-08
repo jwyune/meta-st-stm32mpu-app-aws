@@ -22,7 +22,7 @@ ref : [STM32MP1 Distribution Package - OpenSTLinux distribution](https://wiki.st
 
 #### Clone following git repository into [your STM32MP1 Distribution path]/layers/meta-st/
  > **PC $>** cd [your STM32MP1 Distribution path]/layers/meta-st<br>
- > **PC $>** git clone https://github.com/STMicroelectronics/meta-st-stm32mpu-app-aws.git<br>
+ > **PC $>** git clone https://github.com/jwyune/meta-st-stm32mpu-app-aws.git<br>
  > **PC $>** cd meta-st-stm32mpu-app-aws<br>
  > **PC $>** git checkout remotes/origin/dunfell
 
