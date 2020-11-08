@@ -2,7 +2,7 @@ require greengrass.inc
 
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = " \
-    file://ggc/core/THIRD-PARTY-LICENSES;md5=1f0ad815f019455e3a0efe55e888a69a \
+    file://ggc/core/THIRD-PARTY-LICENSES;md5=d3fb176f85edb203d99ed157c1301989 \
 "
 
 SRC_URI_arm = " \
@@ -14,8 +14,8 @@ SRC_URI_arm = " \
 "
 
 
-SRC_URI[arm.md5sum]        = "f9b1181efe9b0c65dd490b01e9193b61"
-SRC_URI[arm.sha256sum]     = "9e77cc841558a15326b6145ddab2b145db8dc735a3710cb4dd0feb023d16ae2f"
+SRC_URI[arm.md5sum]        = "c5f2981d724e200c0d68ee41e6f6b47c"
+SRC_URI[arm.sha256sum]     = "af6ac0b277193a17d59b010071e153aa3d9aca1136062dd044caab3a9b663b13"
 
 
 # Release specific configuration
@@ -31,4 +31,3 @@ RDEPENDS_${PN} += "opensc openssl libp11"
 INSANE_SKIP_${PN} += " libdir"
 
 FETCHCMD_wget = "/usr/bin/env wget -t 10 -T 30 --passive-ftp --no-check-certificate"
-
