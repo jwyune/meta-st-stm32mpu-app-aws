@@ -88,12 +88,12 @@ Apply the following update in the file _[your STM32MP1 Distribution path]/layers
 ```
 
 #### Build the image
-In the folder _[your STM32MP1 Distribution path]//build-openstlinuxweston-stm32mp1-demo-aws_
+In the folder _[your STM32MP1 Distribution path]/build-openstlinuxweston-stm32mp1-aws-ec21_
 
 Executes the command :
- > **PC $>** bitbake st-image-demo-aws
+ > **PC $>** bitbake st-image-aws-ec21
 
-#### Flash the sdscard
+#### Flash the sdcard
 The tsv file _FlashLayout\_sdcard\_stm32mp157c-demo-aws-mx-trusted.tsv_ is located in<br>
 _[your STM32MP1 Distribution path]/build-openstlinuxweston-stm32mp1-demo-aws/tmp-glibc/deploy/images/stm32mp1-demo-aws/flashlayout_st-image-demo-aws_
 
