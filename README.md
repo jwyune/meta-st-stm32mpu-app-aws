@@ -80,6 +80,13 @@ Update the file _[your STM32MP1 Distribution path]/ layers/meta-st/meta-st-stm32
 IMAGE_ROOTFS_MAXSIZE = "2097152"
 ```
 
+#### Increase the BOOFS partition size
+Update the file _[your STM32MP1 Distribution path]/ layers/meta-st/meta-st-stm32mp/conf/machine/include/st-machine-common-stm32mp.inc_
+
+```
+BOOTFS_PARTITION_SIZE = "512000"
+```
+
 #### Enable TPM build
 Apply the following update in the file _[your STM32MP1 Distribution path]/layers/meta-st/meta-st-openstlinux/conf/distro/include/openstlinux.inc_
 
