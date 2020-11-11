@@ -63,25 +63,25 @@ Apply the following update in the file _[your STM32MP1 Distribution path]/layers
 Apply the following update in the file _[your STM32MP1 Distribution path]/build-openstlinuxweston-stm32mp1-aws-ec21/conf/local.conf_
 
 ```
- # Possible provider: cacao-initial-native and jamvm-initial-native
- PREFERRED_PROVIDER_virtual/java-initial-native = "cacao-initial-native"
+# Possible provider: cacao-initial-native and jamvm-initial-native
+PREFERRED_PROVIDER_virtual/java-initial-native = "cacao-initial-native"
 
- # Possible provider: cacao-native and jamvm-native
- PREFERRED_PROVIDER_virtual/java-native = "jamvm-native"
+# Possible provider: cacao-native and jamvm-native
+PREFERRED_PROVIDER_virtual/java-native = "jamvm-native"
 
- # Optional since there is only one provider for now
- PREFERRED_PROVIDER_virtual/javac-native = "ecj-bootstrap-native"
+# Optional since there is only one provider for now
+PREFERRED_PROVIDER_virtual/javac-native = "ecj-bootstrap-native"
 ```
 
 #### Increase the ROOFS partition size
-Update the file _[your STM32MP1 Distribution path]/ layers/meta-st/meta-st-stm32mp/conf/machine/include/st-machine-common-stm32mp.inc_
+Update the file _[your STM32MP1 Distribution path]/layers/meta-st/meta-st-stm32mp/conf/machine/include/st-machine-common-stm32mp.inc_
 
 ```
 IMAGE_ROOTFS_MAXSIZE = "2097152"
 ```
 
 #### Increase the BOOFS partition size
-Update the file _[your STM32MP1 Distribution path]/ layers/meta-st/meta-st-stm32mp/conf/machine/include/st-machine-common-stm32mp.inc_
+Update the file _[your STM32MP1 Distribution path]/layers/meta-st/meta-st-stm32mp/conf/machine/include/st-machine-common-stm32mp.inc_
 
 ```
 BOOTFS_PARTITION_SIZE = "512000"
@@ -91,7 +91,7 @@ BOOTFS_PARTITION_SIZE = "512000"
 Apply the following update in the file _[your STM32MP1 Distribution path]/layers/meta-st/meta-st-openstlinux/conf/distro/include/openstlinux.inc_
 
 ```
- DISTRO_FEATURES_append = " tpm2 "
+DISTRO_FEATURES_append = " tpm2 "
 ```
 
 #### Build the image
@@ -106,7 +106,7 @@ _[your STM32MP1 Distribution path]/build-openstlinuxweston-stm32mp1-demo-aws/tmp
 
 ref : [STM32CubeProgrammer](https://wiki.st.com/stm32mpu/wiki/STM32CubeProgrammer)
 
-#### Run the scripts for some extra configuration on the target  (to execute only one time after the first boot)
+#### Run the scripts for some extra configuration on the target (to execute only one time after the first boot)
 Executes the commands, on the target :
 
 ```
