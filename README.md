@@ -49,7 +49,7 @@ Executes the command, on the host :
 Apply the following update in the file _[your STM32MP1 Distribution path]/layers/meta-st/meta-st-openstlinux/conf/distro/openstlinux-weston.conf_
 
 ```
- DISTRO_FEATURES_append = "virtualization"
+ DISTRO_FEATURES_append = " virtualization "
 ```
 
 #### Add JAVA JDK in OpenSTLinux distribution
@@ -110,9 +110,9 @@ ref : [STM32CubeProgrammer](https://wiki.st.com/stm32mpu/wiki/STM32CubeProgramme
 Executes the commands, on the target :
 
 ```
-  Board $>source /greengrass/tpm_update.sh
+  Board $> source /greengrass/tpm_update.sh
 
-  Board $>source /greengrass/aws_certif_update.sh
+  Board $> source /greengrass/aws_certif_update.sh
 ```
 
 #### TPM2 token intialisation
@@ -120,13 +120,13 @@ Note : keep the PINs (123456) and PKCS11 STORE folder (usr/local/pkcs11_tpm), sc
 Executes the commands, on the target :
 
 ```
-  Board $>cd /tools
+  Board $> cd /tools
 
-  Board $>./tpm2_ptool.py init --primary-auth=123456 --path=$TPM2_PKCS11_STORE
+  Board $> ./tpm2_ptool.py init --primary-auth=123456 --path=$TPM2_PKCS11_STORE
 
-  Board $>./tpm2_ptool.py addtoken --pid=1 --sopin=123456 --userpin=123456 --label=greengrass --path $TPM2_PKCS11_STORE
+  Board $> ./tpm2_ptool.py addtoken --pid=1 --sopin=123456 --userpin=123456 --label=greengrass --path $TPM2_PKCS11_STORE
 
-  Board $>./tpm2_ptool.py addkey --algorithm=rsa2048 --label="greengrass" --userpin=123456 --key-label=greenkey --path=$TPM2_PKCS11_STORE
+  Board $> ./tpm2_ptool.py addkey --algorithm=rsa2048 --label="greengrass" --userpin=123456 --key-label=greenkey --path=$TPM2_PKCS11_STORE
 
 ```
 #### OPTIONAL : Verifications with pkcs11-tool
@@ -201,7 +201,7 @@ init = 0
 2) How to create a CSR "Certificat Signature Request" with **openssl**
 Executes the command, on target :
 ```
- Board $>openssl req -engine pkcs11 -new -key "pkcs11:token=greengrass;object=greenkey;type=private;pin-value=123456" -keyform engine -out /usr/local/req.csr
+ Board $> openssl req -engine pkcs11 -new -key "pkcs11:token=greengrass;object=greenkey;type=private;pin-value=123456" -keyform engine -out /usr/local/req.csr
 ```
 
 This CSR "**/usr/local/req.csr**" is used to create clients certificats on the AWS amazon Cloud to store on the board.<br>
@@ -214,7 +214,7 @@ Before starting the greengrass core on the target you need to set the **TPM2\_PK
 
 Executes the command on the target :
 ```
- Board $>export TPM2_PKCS11_STORE=/usr/local/pkcs11_tpm
+ Board $> export TPM2_PKCS11_STORE=/usr/local/pkcs11_tpm
 ```
 
 ### In case of trouble to reinit all the TPM/PKCS11 layers
@@ -223,7 +223,7 @@ How to reset the TPM and PKCS11 store :
 
 Executes the commands, on the target:
 ```
- Board $>cd /usr/bin
- Board $>./tpm2_clear -Q
- Board $>rm /usr/local/pkcs11_tpm/*
+ Board $> cd /usr/bin
+ Board $> ./tpm2_clear -Q
+ Board $> rm /usr/local/pkcs11_tpm/*
 ```
