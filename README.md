@@ -49,7 +49,7 @@ Executes the command, on the host :
 Apply the following update in the file _[your STM32MP1 Distribution path]/layers/meta-st/meta-st-openstlinux/conf/distro/openstlinux-weston.conf_
 
 ```
- DISTRO_FEATURES_append = " virtualization "
+DISTRO_FEATURES_append = " virtualization "
 ```
 
 #### Add JAVA JDK in OpenSTLinux distribution
@@ -214,7 +214,7 @@ Before starting the greengrass core on the target you need to set the **TPM2\_PK
 
 Executes the command on the target :
 ```
- Board $> export TPM2_PKCS11_STORE=/usr/local/pkcs11_tpm
+Board $> export TPM2_PKCS11_STORE=/usr/local/pkcs11_tpm
 ```
 
 ### In case of trouble to reinit all the TPM/PKCS11 layers
